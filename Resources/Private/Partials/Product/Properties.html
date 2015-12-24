@@ -1,0 +1,41 @@
+{namespace pc = TEND\ProductCatalog\ViewHelpers}
+
+
+<table class="tx-product-catalog" >
+	<tr>
+		<td>
+			<f:translate key="tx_productcatalog_domain_model_product.title" />
+		</td>
+		<td>
+		{product.title}
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<f:translate key="tx_productcatalog_domain_model_product.description" />
+		</td>
+		<td>
+		{product.description}
+		</td>
+	</tr>
+        
+        <tr>
+		<td>
+                    Trgatev:	
+		</td>
+		<td>
+			 <pc:GetPropertyOptionValue objs="{product.properties}" uid="6" />	
+		</td>
+	</tr>
+	<tr>
+		<td>
+                    Ujemanje s hrano:			
+		</td>
+		<td>                   
+                    <pc:GetPropertyValueByUidFromArray objs="{product.properties}" uid="7" property="value" />
+		</td>
+	</tr>        
+</table>
+
+

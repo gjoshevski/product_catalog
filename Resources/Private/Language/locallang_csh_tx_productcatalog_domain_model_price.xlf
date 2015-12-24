@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-20T09:29:43Z" product-name="product_catalog">
+		<header/>
+		<body>
+			<trans-unit id="price.description">
+				<source>price</source>
+			</trans-unit>
+			<trans-unit id="discount_price.description">
+				<source>discountPrice</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

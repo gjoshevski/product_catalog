@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-20T09:29:43Z" product-name="product_catalog">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="files.description">
+				<source>files</source>
+			</trans-unit>
+			<trans-unit id="images.description">
+				<source>images</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="properties.description">
+				<source>properties</source>
+			</trans-unit>
+			<trans-unit id="categories.description">
+				<source>categories</source>
+			</trans-unit>
+			<trans-unit id="related_products.description">
+				<source>relatedProducts</source>
+			</trans-unit>
+			<trans-unit id="variants.description">
+				<source>variants</source>
+			</trans-unit>
+			<trans-unit id="package_products.description">
+				<source>packageProducts</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

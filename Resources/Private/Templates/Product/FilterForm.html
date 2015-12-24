@@ -1,0 +1,21 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+
+    <h3> s <f:translate key="tx_productcatalog_domain_model_product.searchStringHeader"/> </h3>
+
+    <f:flashMessages renderMode="div" />
+
+    <hr>
+    <f:form controller="Product">
+        Search string
+        <f:form.textfield property="searchString" name="demand[textSearchString]" />
+
+        <f:for each="{sections}" as="section">
+            <f:render partial="Product/FilterSection" arguments="{section: section}" />
+        </f:for>
+
+        <f:form.submit name="mySubmit" value="Filter" />
+    </f:form>
+</f:section>

@@ -1,0 +1,59 @@
+<f:layout name="Default" />
+<f:section name="main">
+
+    <f:flashMessages renderMode="div" />
+
+    <table class="tx_productcatalog">
+        <tr>
+            <th>
+                <f:translate key="tx_productcatalog_domain_model_product.title" />
+            </th>
+            <th>
+                <f:translate key="tx_productcatalog_domain_model_product.description" />
+            </th>
+            <th> </th>
+            <th> </th>
+        </tr>
+
+        <f:for each="{products}" as="product">
+            <tr>
+                <td>
+                    <div>
+                        <f:link.action action="show" arguments="{product : product}"> {product.title}</f:link.action>
+                    </div>
+                    <div>
+                        <f:for each="{product.images}" as="mediaElement" as="mediaElement" iteration="i">
+                            <f:if condition="{i.isFirst}">
+                                <f:then>
+                                    <f:image src="{mediaElement.uid}" treatIdAsReference="1" />
+                                </f:then>
+                            </f:if>
+                        </f:for>
+                    </div>
+                </td>
+                <td>
+                    <f:link.action action="show" arguments="{product : product}"> {product.description}</f:link.action>
+                </td>
+
+                <f:for each="{product.variants}" as="variant" iteration="iterator">
+                   
+                    <!--
+                    <f:if condition="{iterator.isFirst}">
+                        <td>
+                            <f:link.action pageUid="16" action="addToCart" controller="ShoppingCart" arguments="{productVariant: variant}" extensionName="catalogshoppingcart" pluginName="shoppingcart"> Add to cart! </f:link.action>
+                        </td>
+                    </f:if>
+-->
+                    <f:if condition="{iterator.isFirst}">
+                        <td>
+                            <f:link.action pageUid="16" action="addToCart" additionalParams="{type:113}" controller="ShoppingCart" arguments="{productVariant: variant}" extensionName="catalogshoppingcart" pluginName="shoppingcart"> Ajax Add </f:link.action>
+                        </td>
+                    </f:if>
+
+                </f:for>
+
+            </tr>
+        </f:for>
+    </table>
+
+</f:section>

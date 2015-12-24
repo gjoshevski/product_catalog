@@ -1,0 +1,3 @@
+<f:for each="{propertyOptions}" as="option">
+	<li><f:form.radio name="demand[propertyOptions][{property}]" value="{option.uid}" />{option.title}</li>
+</f:for>

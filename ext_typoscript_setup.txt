@@ -1,0 +1,14 @@
+
+config.tx_extbase{
+    persistence{
+        classes{
+           
+            TEND\ProductCatalog\Domain\Model\Category {
+                mapping {
+                    tableName = sys_category                  
+                }
+            }
+            
+    	}
+    }
+}

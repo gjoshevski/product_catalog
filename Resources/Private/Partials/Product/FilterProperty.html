@@ -1,0 +1,44 @@
+<f:switch expression="{property.type}">
+    <f:comment>
+        <!-- 0 -> Text - Singlerow 
+        <f:case value="0">
+            <f:form.checkbox name="demand[properties][]" value="{property.uid}" />{property.title}</f:case>
+        -->
+        <!-- 1 -> Text - Multie row
+        <f:case value="1">
+            <f:form.checkbox name="demand[properties][]" value="{property.uid}" />{property.title}</f:case>ž
+        -->
+        <!-- 2 Text - Rich Text Editor
+        <f:case value="2">
+            <f:form.checkbox name="demand[properties][]" value="{property.uid}" />{property.title}</f:case>
+        -->
+    </f:comment>
+    <f:case value="3">{property.title}
+        <li class="catalog_filter_item">
+            <ul>
+                <f:render partial="PropertyOptions/FilterCheckbox" arguments="{property:property.uid, propertyOptions: property.propertyOptions}" />
+            </ul>
+        </li>
+    </f:case>
+
+    <f:case value="4">{property.title}
+        <li class="catalog_filter_item">
+            <ul>
+                <f:render partial="PropertyOptions/FilterRadio" arguments="{property:property.uid, propertyOptions: property.propertyOptions}" />
+            </ul>
+        </li>
+    </f:case>
+
+    <f:case value="5">{property.title}
+        <li class="catalog_filter_item">
+            <f:render partial="PropertyOptions/FilterSelect" arguments="{property:property.uid, propertyOptions: property.propertyOptions}" />
+        </li>
+    </f:case>
+
+    <f:case value="6">{property.title}
+        <li class="catalog_filter_item">
+            <f:render partial="PropertyOptions/FilterGroup" arguments="{property:property.uid, propertyOptions: property.propertyOptions}" />
+        </li>
+    </f:case>
+
+</f:switch>

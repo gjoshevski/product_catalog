@@ -1,0 +1,22 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+
+<h1>Filter from sections</h1>
+
+<f:flashMessages renderMode="div" />
+
+<hr>
+
+
+<f:form object="{overwriteDemand}" controller="Product">
+					
+	  <f:form.textfield property="searchString" name="overwriteDemand[textSearchString]"/>
+
+	 <f:form.submit name="mySubmit" value="Filter" />
+	
+</f:form>
+
+</f:section>

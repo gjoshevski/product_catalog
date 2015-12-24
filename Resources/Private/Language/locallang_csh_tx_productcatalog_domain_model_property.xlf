@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-20T09:29:43Z" product-name="product_catalog">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="exclude_from_filtering.description">
+				<source>excludeFromFiltering</source>
+			</trans-unit>
+			<trans-unit id="type.description">
+				<source>type</source>
+			</trans-unit>
+			<trans-unit id="typeconfig.description">
+				<source>typeconfig</source>
+			</trans-unit>
+			<trans-unit id="property_options.description">
+				<source>propertyOptions</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
