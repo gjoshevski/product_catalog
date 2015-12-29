@@ -132,6 +132,13 @@
 			<trans-unit id="tx_productcatalog_domain_model_stock.stock_value">
 				<source>Stock Value</source>
 			</trans-unit>
+                        <trans-unit id="tx_productcatalog_domain_model_stock.automated_stock">
+				<source>Automated stock</source>
+			</trans-unit>      
+                        <trans-unit id="tx_productcatalog_domain_model_stock.in_stock">
+				<source>In Stock</source>
+			</trans-unit>                        
+                        
 			<trans-unit id="tx_productcatalog_domain_model_productcode">
 				<source>Product Code</source>
 			</trans-unit>

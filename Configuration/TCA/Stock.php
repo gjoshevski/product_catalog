@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_productcatalog_domain_model_stock'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_productcatalog_domain_model_stock']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, stock_value',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, stock_value, in_stock, automated_stock',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, stock_value, '),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, stock_value, in_stock, automated_stock, '),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -66,6 +66,23 @@ $GLOBALS['TCA']['tx_productcatalog_domain_model_stock'] = array(
 				'eval' => 'int'
 			)
 		),
+                 'in_stock' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:product_catalog/Resources/Private/Language/locallang_db.xlf:tx_productcatalog_domain_model_stock.in_stock',
+			'config' => array(
+				'type' => 'check',
+			),
+		),
+                'automated_stock' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:product_catalog/Resources/Private/Language/locallang_db.xlf:tx_productcatalog_domain_model_stock.automated_stock',
+			'config' => array(
+				'type' => 'check',
+			),
+		),
+            
+            
+            
 		
 		'productvariant' => array(
 			'config' => array(

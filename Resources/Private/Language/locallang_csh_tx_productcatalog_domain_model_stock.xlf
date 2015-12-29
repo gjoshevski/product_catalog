@@ -6,6 +6,13 @@
 			<trans-unit id="stock_value.description">
 				<source>stockValue</source>
 			</trans-unit>
+                        <trans-unit id="in_stock.description">
+				<source>Is item in or out of stock. Works if Ignore Stock Value is checked</source>
+			</trans-unit>
+                         <trans-unit id="automated_stock.description">
+				<source>If selected, stock will be decresed when product is sold.</source>
+			</trans-unit>
+                        
 		</body>
 	</file>
 </xliff>

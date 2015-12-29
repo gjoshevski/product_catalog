@@ -1,22 +1,33 @@
 
 <f:layout name="Default" />
 
-This Template is responsible for displaying a single view for a domain object
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Show.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="main">
-<h1>Single View for Product</h1>
+    
+    <div itemscope itemtype="http://schema.org/Product">
+        <h1 itemprop="name">{product.title}</h1>
+        <f:flashMessages renderMode="div" />
 
-<f:flashMessages renderMode="div" />
-<f:render partial="Product/Properties" arguments="{product:product}" />
-<f:link.action action="list">Back to list</f:link.action><br />
+        <p itemprop="description">
+        <f:format.htmlentitiesDecode >{product.description}</f:format.htmlentitiesDecode>
+        </p>
 
+        <f:for each="{product.images}" as="image" iteration="itr">              
+            <a class="t3colorbox cboxElement" rel="lightbox" title="{image.title}" href='<f:uri.image src="{image.uid}" treatIdAsReference="1" width="800" />'>              
+                <f:image src="{image.uid}" treatIdAsReference="1" width="150c" height="150c" alt="My Image" />
+            </a>             
+        </f:for>
+
+        <f:for each="{product.files}" as="file" iteration="itr">           
+            <p>
+                <img src="http://www.oven-em.si/typo3conf/ext/ml_links/Resources/Public/Icons/filetypes/pdf.png" alt=""/>
+                &nbsp;<a href='<f:uri.image src="{file.uid}" treatIdAsReference="1"/>' title="Initiates file download" class="download">{file.originalResource.originalFile.name}</a>
+                &nbsp;(<f:format.bytes>{file.originalResource.originalFile.size}</f:format.bytes>)
+            </p>              
+        </f:for>
+        
+        <hr/>
+        <h3>Cena: </h3>
+
+
+    </div>
 </f:section>

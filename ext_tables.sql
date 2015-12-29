@@ -341,6 +341,9 @@ CREATE TABLE tx_productcatalog_domain_model_stock (
 	productvariant int(11) unsigned DEFAULT '0' NOT NULL,
 
 	stock_value int(11) DEFAULT '0' NOT NULL,
+        in_stock tinyint(4) unsigned DEFAULT '1' NOT NULL,
+        automated_stock tinyint(4) unsigned DEFAULT '1' NOT NULL,
+
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

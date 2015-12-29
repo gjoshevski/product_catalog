@@ -30,73 +30,8 @@ namespace TEND\ProductCatalog\Controller;
 /**
  * ProductController
  */
-class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
-	
-	/**
-	 * demand
-	 *
-	 * @var \TEND\ProductCatalog\Domain\Model\Dto\Demand
-	 */
-	protected $demand = NULL;
-	
-	/**
-	 * sectionRepository
-	 *
-	 * @var \TEND\ProductCatalog\Domain\Repository\SectionRepository
-	 * @inject
-	 */
-	protected $sectionRepository = NULL;
+class ProductController extends \TEND\ProductCatalog\Controller\BasicController {
 
-	/**
-	 * productRepository
-	 *
-	 * @var \TEND\ProductCatalog\Domain\Repository\ProductRepository
-	 * @inject
-	 */
-	protected $productRepository = NULL;
-	
-	/**
-	 * categoryRepository
-	 *
-	 * @var \TEND\ProductCatalog\Domain\Repository\CategoryRepository
-	 * @inject
-	 */
-	protected $categoryRepository = NULL;
-    
-     /**
-     * @var string
-     */
-    protected $viewFormatToObjectNameMap = array(
-                'html' => 'TYPO3\Fluid\View\TemplateView',
-                'json' => 'TYPO3\CMS\Extbase\Mvc\View\JsonView'
-    );
-    
- 
-    /**
-     * A list of IANA media types which are supported by this controller
-     *
-     * @var array
-     */
-    protected $supportedMediaTypes = array('application/json', 'text/html');
-
-    public function initializeView() {
-    $this->debug($this->request);
-        if ($this->request->getFormat() === 'json') {
-            echo "Json";
-            $this->view =  $this->objectManager->create('TYPO3\CMS\Extbase\Mvc\View\JsonView'); 
-           $this->view->setControllerContext($this->controllerContext);
-        }
-    }
-
-    
-	/**
-	 * Initializes the current action
-	 *
-	 * @return void
-	 */
-	public function initializeAction() {
-		$this->demand = $this->createDemandObjectFromSettings();
-	}
 	
 	/**
 	 * Initializes action list
@@ -169,8 +104,6 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 		}		
 	}
 	
-	public function debug($o){
-		\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($o);
-	}
+	
 }
 
